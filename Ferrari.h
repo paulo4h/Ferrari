@@ -1,27 +1,31 @@
-#ifndef _FERRARI_H_H_
-#define _FERRARI_H_H_
+#ifndef FERRARI_H
+#define FERRARI_H
 
- 
+
 class Ferrari
 {
 public:
- 
-    Ferrari(int,int,int);
- 
-    void valorDaCompra(int );
- 
-    int verificarMacha ( );
- 
-    void acelerar ( );
- 
- 
- 
-private:
-    int aceleracao; 
-    int marchas;
-    int velocidade;
-    static int preçoDeRevenda;
-    
- 
-#endif
+	Ferrari(int, int, int);
+	
+	
+	~Ferrari();
 
+	
+	void calculoVelocidade(int);
+	
+	void ligarCarro(int);
+    
+    void modoTurbo(int);
+private:
+
+    int const aceleracao = 5; 
+    float velocidade;
+    int quilometros;
+    int chave;
+    int const aceleracaoTurbo = 10;
+    
+	
+
+};
+
+#endif // FERRARI_H
