@@ -8,44 +8,48 @@ using std::endl;
 
 
 
-Ferrari::Ferrari(int velocidade, int quilometros, int chave )
+Ferrari::Ferrari(float velocidade, float quilometros, bool chave )
 {
-     
-    velocidade = 0;
-    quilometros = 0;
-    chave = 0;
+
+    this->velocidade = velocidade;
+    this->quilometros = quilometros;
+    this->chave = chave;
 }
 
 Ferrari::~Ferrari()
 {
 }
 
-void Ferrari::ligarCarro(int chave)
+void Ferrari::ligarCarro(bool chave)
 {
-    if(chave==1)
-        {cout<<"o carro esta ligado"<<endl;}
-        else{cout<<"o carro ainda nao foi ligado"<<endl;};
+    if(chave==true)
+    {
+        cout<<"o carro esta ligado!!!\n"<<endl;
+    }
+    else
+    {
+        cout<<"o carro ainda nao foi ligado\n"<<endl;
+    };
 }
 
-
-void Ferrari::calculoVelocidade(int quilometros)
+void Ferrari::calculoVelocidade(float quilometros)
 {
     this -> quilometros = quilometros * 1000;
-    
+
     velocidade = sqrt(quilometros*aceleracao*2);
-    
-    cout<< "o carro percorreu: " << quilometros/1000 << "com velocidade de " << velocidade << "km/h" <<endl;   
+
+    cout<< "o carro percorreu: " << quilometros << " km com velocidade de " << velocidade << "km/h" <<endl;
 }
 
 
-void Ferrari::modoTurbo(int quilometros)
+void Ferrari::modoTurbo(float quilometros)
 {
-    
-    this -> quilometros = quilometros * 1000;
-    
+
+    this->quilometros = quilometros * 1000;
+
     velocidade = sqrt(quilometros*aceleracaoTurbo*2);
-    
-    cout<< "o carro percorreu: " << quilometros/1000 << "com velocidade de " << velocidade << "km/h em modo turbo" <<endl;
-    
+
+    cout<< "o carro percorreu: " << quilometros << " km com velocidade de " << velocidade << "km/h em modo turbo" <<endl;
+
 }
 

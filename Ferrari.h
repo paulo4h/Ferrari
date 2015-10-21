@@ -4,27 +4,28 @@
 
 class Ferrari
 {
-public:
-	Ferrari(int, int, int);
-	
-	
-	~Ferrari();
 
-	
-	void calculoVelocidade(int);
-	
-	void ligarCarro(int);
-    
-    void modoTurbo(int);
 private:
 
-    int const aceleracao = 5; 
+    const int aceleracao = 5; // tomando como constante a aceleração de uma ferrari imaginaria, ou seja, percorre  em 1 segundo.
     float velocidade;
-    int quilometros;
-    int chave;
-    int const aceleracaoTurbo = 10;
-    
-	
+    float quilometros;
+    bool chave;
+    const int  aceleracaoTurbo = 10;
+
+
+public:
+	Ferrari(float velocidade, float quilometros, bool chave);
+
+
+	~Ferrari();
+
+
+	void calculoVelocidade(float);
+
+	void ligarCarro(bool); // boleano o parametro
+
+    void modoTurbo(float);
 
 };
 
