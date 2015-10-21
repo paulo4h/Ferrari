@@ -6,15 +6,26 @@ using std::endl;
 
 #include "Ferrari.h"
 
+int Ferrari::numeroDeFerrari = 0;
+const int Ferrari::numeroMaximoDeTeste = 1;
 
-
-Ferrari::Ferrari(float velocidade, float quilometros, bool chave )
+Ferrari::Ferrari(float velocidade, float quilometros, bool chave )// colocar para verificar se os valores são positivos.
 {
 
-    this->velocidade = velocidade;
-    this->quilometros = quilometros;
+    velocidade >= 0 ? this->velocidade = velocidade : this->velocidade = 0;
+    quilometros>= 0 ? this->quilometros = quilometros : this->quilometros = 0;
     this->chave = chave;
+    numeroDeFerrari ++; // toda vez que uma ferrari for criada é somada +1 ao numero de ferraris existentes.
 }
+
+Ferrari::Ferrari(const Ferrari &p)
+{
+    velocidade = p.velocidade;
+    quilometros = p.quilometros;
+    chave = p.chave;
+    numeroDeFerrari ++; // caso utilizar o construtor de copia tambem irá estar gerando outra ferrari.
+}
+
 
 Ferrari::~Ferrari()
 {
@@ -53,3 +64,7 @@ void Ferrari::modoTurbo(float quilometros)
 
 }
 
+int Ferrari::getNumeroDeFerrari()const
+{
+    return numeroDeFerrari;
+}

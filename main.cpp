@@ -8,7 +8,7 @@ using std::cin;
 
 int main()
 {
-	Ferrari test1(0, 0, false);
+	Ferrari test1(0, 0, false),test2(test1);
 
 	bool decisaoLigar;
     float quilometros;
@@ -47,6 +47,8 @@ int main()
 
     test1.modoTurbo(quilometros);
 
+
+    cout << "\no numero de ferraris criadas e : " << test1.getNumeroDeFerrari()  << endl;
 
 
 	return 0;
