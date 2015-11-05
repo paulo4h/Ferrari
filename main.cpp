@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Ferrari.h"
+#include <time.h>
 
 using std::cout;
 using std::endl;
@@ -8,11 +9,14 @@ using std::cin;
 
 int main()
 {
-	Ferrari test1(0, 0, false),test2(test1);
+	Ferrari test1(0, 0, false,false,0),test2(test1);
+
 
 	bool decisaoLigar;
     float quilometros;
     int x;
+
+    test1.verificarChave();
 
     cout << "*** Ira comecar o test drive da ferrari *** \n\n" << endl;
 
@@ -24,7 +28,17 @@ int main()
     }
     else
     {
+
+      if(x==0)
+      {
         decisaoLigar = false;
+      }
+      if(x!=0)
+      {
+        cout<<"\ndigito invalido\n" << endl;
+        decisaoLigar = false;
+      }
+
     }
 
     test1.ligarCarro(decisaoLigar);
